@@ -22,6 +22,7 @@ class Stream extends Streamer {
         var_dump($options);
         var_dump($opened_path);
         var_dump('packages.json' === \substr( $path, -strlen('packages.json')));
+        echo __LINE__ . "\n";
 
         if ('packages.json' === \substr( $path, -strlen('packages.json')))  {
             self::$data[$path] = \json_encode([
