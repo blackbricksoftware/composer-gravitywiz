@@ -5,12 +5,24 @@ namespace BlackBrickSoftware\Composer\GravityWiz;
 use PiotrPress\Streamer;
 
 class Stream extends Streamer {
-    static public function register( string $protocol, int $flags = 0 ) : bool {
-        if ( \in_array( $protocol, \stream_get_wrappers() ) ) self::unregister( $protocol );
-        return parent::register( $protocol, $flags );
+
+    static public function register(string $protocol, int $flags = 0) : bool
+    {
+        if (\in_array($protocol, \stream_get_wrappers())) {
+            self::unregister($protocol);
+        }
+        return parent::register($protocol, $flags);
     }
 
-    public function stream_open( string $path, string $mode, int $options, ?string &$opened_path ) : bool {
+    public function stream_open(string $path, string $mode, int $options, ?string &$opened_path) : bool
+    {
+
+        var_dump($path);
+        var_dump($mode);
+        var_dump($options);
+        var_dump($opened_path);
+        exit;
+
         if ( 'packages.json' === \substr( $path, -strlen( 'packages.json' ) ) ) self::$data[ $path ] = \json_encode( [
             'metadata-url' => '/%package%',
             'available-package-patterns' => [ \parse_url( $path, \PHP_URL_SCHEME ) . '/*' ]

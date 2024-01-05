@@ -17,7 +17,7 @@ class Plugin implements PluginInterface {
             return;
         }
 
-        Stream::register( 'gravitywiz' );
+        Stream::register('gravitywiz');
 
         // https://gravitywiz.com/documentation/can-i-download-perks-via-an-api/
         // https://gravitywiz.com/gwapi/v2/?edd_action=get_products
