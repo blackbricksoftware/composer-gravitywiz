@@ -21,13 +21,15 @@ class Stream extends Streamer {
         var_dump($mode);
         var_dump($options);
         var_dump($opened_path);
-        exit;
 
-        if ( 'packages.json' === \substr( $path, -strlen( 'packages.json' ) ) ) self::$data[ $path ] = \json_encode( [
-            'metadata-url' => '/%package%',
-            'available-package-patterns' => [ \parse_url( $path, \PHP_URL_SCHEME ) . '/*' ]
-        ] );
-        else {
+        if ('packages.json' === \substr( $path, -strlen('packages.json')))  {
+            self::$data[$path] = \json_encode([
+                'metadata-url' => '/%package%',
+                'available-package-patterns' => [
+                    \parse_url( $path, \PHP_URL_SCHEME ) . '/*',
+                ],
+            ]);
+        } else {
             $data = @\unserialize( @\file_get_contents( \str_replace( [ '$host', '$key', '$slug' ], [
                 \parse_url( $path, \PHP_URL_HOST ),
                 \parse_url( $path, \PHP_URL_PASS ),
@@ -51,6 +53,9 @@ class Stream extends Streamer {
             ] : [] );
         }
 
+        var_dump(self::$data);
+
+        exit;
         return parent::stream_open( $path, $mode, $options, $opened_path );
     }
 }
