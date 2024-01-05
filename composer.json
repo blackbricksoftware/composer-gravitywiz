@@ -1,9 +1,9 @@
 {
-    "name": "blackbricksoftware/composer-gravityforms",
+    "name": "blackbricksoftware/composer-gravitywiz",
     "type": "composer-plugin",
     "license": "MIT",
-    "description": "This composer plugin enables installation of Gravity Perks WordPress plugins from Gravity Wiz. Base on Composer GravityForms (https://github.com/PiotrPress/composer-gravityforms)",
-    "homepage": "https://github.com/PiotrPress/composer-gravityforms",
+    "description": "This composer plugin enables installation of Gravity Perks WordPress plugins from Gravity Wiz. Base on Composer GravityForms (https://github.com/PiotrPress/composer-gravitywiz)",
+    "homepage": "https://github.com/PiotrPress/composer-gravitywiz",
     "authors": [
         {
             "name": "David Hayes",
