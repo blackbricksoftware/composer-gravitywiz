@@ -37,7 +37,7 @@ class Stream extends Streamer {
                 \parse_url( $path, \PHP_URL_PASS ),
                 \basename( $path )
             ], \stream_context_get_options( $this->context )[ \parse_url( $path, \PHP_URL_SCHEME ) ][ 'api' ] ) ) ?: '' );
-            var_dump($data); exit;
+            var_dump($data);
             self::$data[ $path ] = \json_encode( ( $data[ 'version_latest' ] ?? '' and $data[ 'download_url_latest' ] ?? '' ) ? [
                 'packages' => [
                     \parse_url( $path, \PHP_URL_SCHEME ) . '/' . \basename( $path ) => [
