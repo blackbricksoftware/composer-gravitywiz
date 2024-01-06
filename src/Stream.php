@@ -57,7 +57,6 @@ class Stream extends Streamer {
 
         var_dump(self::$data);
 
-        exit;
         return parent::stream_open( $path, $mode, $options, $opened_path );
     }
 }
