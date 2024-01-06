@@ -1,6 +1,6 @@
 # Composer GravityWiz
 
-This composer plugin enables installation of Gravity Perks WordPress plugins from Gravity Wiz. Base on Composer GravityForms (https://github.com/PiotrPress/composer-gravitywiz).
+This composer plugin enables installation of Gravity Perks WordPress plugins from Gravity Wiz. Base on Composer GravityForms (https://github.com/PiotrPress/composer-gravityforms).
 
 ## Example
 
